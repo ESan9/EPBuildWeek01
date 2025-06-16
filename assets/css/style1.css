@@ -14,7 +14,7 @@ footer {
 
 header #logo-epicode {
   width: 12%;
-  margin-top: 2em;
+  margin-top: 3em;
   margin-bottom: 5em;
 }
 
@@ -63,6 +63,10 @@ footer #section-button form {
   font-size: 1em;
 }
 
+footer #section-button form #inputText p {
+  display: inline-block;
+}
+
 footer #section-button form div {
   display: inline-block;
 }
@@ -75,13 +79,13 @@ footer #section-button form #button-box #button {
   font-size: 1em;
   margin-left: 10em;
   background-color: aqua;
-  box-shadow: 1px 1px 20px 1px aqua;
+  box-shadow: 1px 1px 20px 1px rgb(4, 94, 94) inset;
   border: none;
   font-family: "Inter", sans-serif;
 }
 
 footer #section-button form #button-box #button:hover {
-  box-shadow: 1px 1px 20px 1px rgb(4, 94, 94) inset;
+  box-shadow: 1px 1px 20px 1px aqua;
 }
 
 footer #section-button form #inputText input {

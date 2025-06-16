@@ -1,0 +1,19 @@
+body {
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+header,
+main,
+footer {
+  margin-left: 10%;
+}
+
+/* Lavoro sul Header */
+
+header #logo-epicode {
+  width: 12%;
+  margin-top: 3em;
+  margin-bottom: 5em;
+}
