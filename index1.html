@@ -3,7 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>exam_01_welcome</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <img
+        src="./assets/img/epicode_logo.png"
+        alt="Logo di Epicode"
+        id="logo-epicode"
+      />
+      <h1 id="titolo-pagina">
+        Welcome to <br />
+        <span style="font-weight: bold">your exam</span>
+      </h1>
+    </header>
+    <main>
+      <section id="section-main">
+        <h2>Instructions</h2>
+        <p>
+          We don't expect most engineers to know the answers to all of these
+          <br />
+          questions, so don't worry if you're unsure of a few of them
+        </p>
+      </section>
+      <section id="section-list">
+        <ul>
+          <li>
+            Each question is <span style="font-weight: bold">timed</span> and
+            can only be <span style="font-weight: bold">answered once.</span>
+          </li>
+          <li>
+            Changing browser tab or opening other windows will
+            <span style="font-weight: bold">invalidate the questions.</span>
+          </li>
+          <li>
+            This exams will take approx.
+            <span style="font-weight: bold">0-5 minutes</span>.
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <section id="section-button">
+        <form id="proceed">
+          <div id="inputText">
+            <input type="checkbox" id="check" required />
+            <label for="check"
+              >I promise to answer myself without help from anyone</label
+            >
+          </div>
+          <div id="button-box">
+            <button id="button">PROCEED</button>
+          </div>
+        </form>
+      </section>
+    </footer>
+    <script src="./assets/js/welcome.js"></script>
+  </body>
 </html>

@@ -1,0 +1,107 @@
+body {
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+header,
+main,
+footer {
+  margin-left: 10%;
+}
+
+/* Lavoro sul header */
+
+header #logo-epicode {
+  width: 12%;
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
+
+header #titolo-pagina {
+  color: white;
+  font-size: 5em;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+}
+
+/* Lavoro sul main */
+
+main #section-main h2 {
+  color: rgba(198, 41, 151, 0.958);
+  margin-top: 1.5em;
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: "Outfit", sans-serif;
+}
+
+main #section-main p {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+main #section-list ul {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+  margin-left: 0.5em;
+  margin-bottom: 7em;
+}
+
+main #section-list ul li {
+  margin: 1em;
+}
+
+/* Lavoro sul footer */
+
+footer #section-button form {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+}
+
+footer #section-button form div {
+  display: inline-block;
+}
+
+footer #section-button form #button-box #button {
+  color: black;
+  font-weight: bold;
+  width: 12em;
+  height: 3em;
+  font-size: 1em;
+  margin-left: 10em;
+  background-color: aqua;
+  box-shadow: 1px 1px 20px 1px aqua;
+  border: none;
+  font-family: "Inter", sans-serif;
+}
+
+footer #section-button form #button-box #button:hover {
+  box-shadow: 1px 1px 20px 1px rgb(4, 94, 94) inset;
+}
+
+footer #section-button form #inputText input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fffdfd;
+  position: relative;
+  top: 7px;
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+footer #section-button form #inputText input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  left: 2px;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+}
