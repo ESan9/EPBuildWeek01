@@ -104,8 +104,8 @@ label {
 #promiseT::after {
   content: ""; /* Contenuto vuoto per creare la spunta */
   display: inline-block;
-  width: 8px; /* Larghezza della spunta */
-  height: 14px; /* Altezza della spunta */
+  width: 5px; /* Larghezza della spunta */
+  height: 10px; /* Altezza della spunta */
   border: solid white; /* Colore della spunta (bianco) */
   border-width: 0 3px 3px 0; /* Solo bordi inferiore e destro */
   position: absolute;
