@@ -39,14 +39,14 @@ h1{
     font-weight: 300;
   }
 
- ul{
+ #lista{
    margin-top: 3em;
     padding-left: 1.5em;
     line-height: 0.5em;
  }
 
 #check{
-        margin-top: 5em;
+        margin-top: 4em;
 }
 
  label{
@@ -64,6 +64,6 @@ h1{
     font-weight: bolder;
     box-shadow: 1px 3px 31px 11px rgba(0, 255, 255, 0.56);
     border-color: #00ffff;
-    margin-top: 4em;   
+    margin-top: 3em;   
     
  }
