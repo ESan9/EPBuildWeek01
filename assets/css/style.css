@@ -1,0 +1,51 @@
+body {
+    padding: 1em 3em 1em 1em;
+    background-image: url("../img/bg.jpg");
+    color: white;
+}
+
+header, main {
+    padding: 0.5em 1em 1em 3em;
+}
+
+header img {
+    height: 30px;
+    padding: 1em;
+}
+
+strong {
+    font-weight: bold;
+}
+
+main h1 {
+    font-size: 4em;
+    width: 400px;
+    line-height: 0.7em;
+    margin-top: 0.5em;
+    /* margin-bottom: 0.8em; */
+}
+
+h3 {
+    color: purple;
+    font-weight: bold;
+    font-size: 1.5em;
+    /* margin-bottom: 0.5em; */
+}
+
+main > div {
+    margin: 2em 0;
+}
+
+div > p {
+    margin: 0.5em 0;
+}
+
+ul {
+    padding-left: 1em;
+    margin-bottom: 3em;
+}
+
+ul li {
+    margin: 0.4em 0;
+}
+
