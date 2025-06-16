@@ -2,8 +2,9 @@ const agreementTerms = document.getElementById("promiseT");
 const proceedBttn = document.getElementById("proceedBttn");
 
 // STATO PULSANTE //
+
 const updateButtonState = function () {
-  // Il pulsante è disabilitato se il checkbox NON è selezionato //
+  // Il pulsante è disabilitato se il checkbox non è selezionato //
   proceedBttn.disabled = !agreementTerms.checked;
 };
 
@@ -14,7 +15,8 @@ agreementTerms.addEventListener("change", function () {
 });
 
 // Listener per il pulsante //
-proceedBttn.addEventListener("click", function () {
+proceedBttn.addEventListener("click", function (e) {
+  e.preventDefault();
   if (agreementTerms.checked) {
     window.location.href = "index2.html";
   }
