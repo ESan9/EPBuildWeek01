@@ -1,5 +1,7 @@
 const totalTime = 60;
 let timeLeft = totalTime;
+let isTimerAlreadyOn = false;
+let hasRestarted = false;
 
 const circle = document.querySelector(".progress");
 const text = document.getElementById("timeDisplay");
@@ -18,6 +20,7 @@ function updateTimer() {
   if (timeLeft <= 0) {
     // text.textContent = "0";
     text.innerHTML = `<p>SECONDS</br><span>0</span></br>REMANING</p>`;
+    changeQuestion(0);
     return;
   }
 
@@ -25,8 +28,12 @@ function updateTimer() {
   // text.textContent = timeLeft;
   text.innerHTML = `<p class="spanSeconds">SECONDS</br><span class="spanNumber">${timeLeft}</span></br>REMANING</p>`;
   timeLeft--;
-  console.log(timeLeft);
-  setTimeout(updateTimer, 1000);
+
+  if (!isTimerAlreadyOn) {
+    setTimeout(updateTimer, 1000);
+  }
+
+  isTimerAlreadyOn = false;
 }
 
 updateTimer();
@@ -133,12 +140,19 @@ let index = 0;
 let numberCorrectAnswers = 0;
 
 const changeQuestion = (e) => {
-  if (e.target.innerText === `${questions[index - 1].correct_answer}`) {
-    numberCorrectAnswers++;
+  if (e !== 0) {
+    if (e.target.innerText === `${questions[index - 1].correct_answer}`) {
+      numberCorrectAnswers++;
+    }
   }
 
   if (index < questions.length) {
-    writeQA(e);
+    timeLeft = totalTime;
+    if (e !== 0) {
+      isTimerAlreadyOn = true;
+    }
+    updateTimer();
+    writeQA();
   } else {
     window.location.href = "index3.html";
   }
@@ -159,18 +173,11 @@ const writeQA = () => {
     allTheAnswers.push(questions[index].incorrect_answers[k]);
   }
   allTheAnswers.sort();
-  console.log("allTheAnswers", allTheAnswers);
 
   for (let i = 0; i < allTheAnswers.length; i++) {
     answers[i].innerText = allTheAnswers[i];
-    // answers[i].addEventListener("click", changeQuestion());
   }
 
-  console.log(
-    "allTheAnswers.length < answers.length",
-    allTheAnswers.length < answers.length
-  );
-  console.log("difference", answers.length - allTheAnswers.length);
   if (allTheAnswers.length < answers.length) {
     for (
       let i = answers.length - allTheAnswers.length;
@@ -195,38 +202,24 @@ const writeQA = () => {
 
 writeQA();
 
-const timerResetWithNewQuestionModified = function () {
-  console.log("Timer reset, loading new question...");
-
-  // Per andare alla prossima domanda //
-  index++;
-  if (index < questions.length) {
-    writeQA();
-  } else {
-    window.location.href = "index3.html";
-  }
-};
-
-setTimeout(timerResetWithNewQuestionModified, 60000);
-
 let currentQuestion = 1;
 const totalQuestions = 10;
 
-const getQuestionNumberPlace = document.getElementBytag("h2");
+const getQuestionNumberPlace = document.getElementsByTagName("h2");
 
 // VEDIAMO come refreshare il display //
-const updateQuestionNumberDisplay = function () {
-  if (getQuestionNumberPlace) {
-    getQuestionNumberPlace.textContent = `QUESTION ${currentQuestion}/${totalQuestions}`; //
-  }
-};
+// const updateQuestionNumberDisplay = function () {
+//   if (getQuestionNumberPlace) {
+//     getQuestionNumberPlace.textContent = `QUESTION ${currentQuestion}/${totalQuestions}`; //
+//   }
+// };
 
 // REFRESH OROLOGIO allo scadere dei 60 secondi //
 
 // REFRESH OROLOGIO per ogni domanda risposta //
 
 // Refresh al caricamento della pagina //
-document.addEventListener("DOMContentLoaded", () => {
-  writeQA(); // Mostra la prima domanda
-  startTimer(); // Inizia il timer per la prima domanda
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   writeQA(); // Mostra la prima domanda
+//   startTimer(); // Inizia il timer per la prima domanda
+// });
