@@ -9,7 +9,7 @@ const text = document.getElementById("timeDisplay");
 const radius = 45;
 const circumference = 2 * Math.PI * radius;
 
-// circle.style.strokeDasharray = circumference;
+circle.style.strokeDasharray = circumference;
 
 function setProgress(time) {
   const offset = circumference * (1 - time / totalTime);
@@ -28,7 +28,6 @@ function updateTimer() {
   // text.textContent = timeLeft;
   text.innerHTML = `<p class="spanSeconds">SECONDS</br><span class="spanNumber">${timeLeft}</span></br>REMANING</p>`;
   timeLeft--;
-  console.log(timeLeft);
 
   if (!isTimerAlreadyOn) {
     setTimeout(updateTimer, 1000);
@@ -224,4 +223,3 @@ const getQuestionNumberPlace = document.getElementsByTagName("h2");
 //   writeQA(); // Mostra la prima domanda
 //   startTimer(); // Inizia il timer per la prima domanda
 // });
-console.log("numberCorrectAnswers", numberCorrectAnswers);
