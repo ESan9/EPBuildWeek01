@@ -166,10 +166,24 @@ const writeQA = () => {
     // answers[i].addEventListener("click", changeQuestion());
   }
 
+  console.log(
+    "allTheAnswers.length < answers.length",
+    allTheAnswers.length < answers.length
+  );
+  console.log("difference", answers.length - allTheAnswers.length);
   if (allTheAnswers.length < answers.length) {
-    for (let i = 2; i < answers.length; i++) {
+    for (
+      let i = answers.length - allTheAnswers.length;
+      i < answers.length;
+      i++
+    ) {
       answers[i].innerText = "";
       answers[i].classList.add("hide");
+      // Creare classe hide
+    }
+  } else {
+    for (let i = 2; i < answers.length; i++) {
+      answers[i].classList.remove("hide");
       // Creare classe hide
     }
   }
@@ -180,6 +194,20 @@ const writeQA = () => {
 };
 
 writeQA();
+
+const timerResetWithNewQuestionModified = function () {
+  console.log("Timer reset, loading new question...");
+
+  // Per andare alla prossima domanda //
+  index++;
+  if (index < questions.length) {
+    writeQA();
+  } else {
+    window.location.href = "index3.html";
+  }
+};
+
+setTimeout(timerResetWithNewQuestionModified, 60000);
 
 let currentQuestion = 1;
 const totalQuestions = 10;
