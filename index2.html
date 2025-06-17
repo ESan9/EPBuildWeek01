@@ -3,9 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exam_02_welcome</title>
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/style2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style1.css" />
+    <title>exam_02_test</title>
   </head>
   <body>
     <header>
@@ -31,37 +43,24 @@
       <!-- <div id="countdown" class="timerNumber" class="timerCircle">10</div> -->
     </header>
     <main>
-      <section id="domande">
-        <h1>Qui è presente la domanda</h1>
-      </section>
-      <!-- titolo della domanda che cambierà ad ogni risposta selezionata -->
-      <section id="risposte">
-        <div>
-          <p>Cliccare la risposta</p>
+      <div>
+        <h1></h1>
+      </div>
+      <div class="RispostaContainer">
+        <div class="Riga">
+          <button class="Risposta"></button>
+          <button class="Risposta"></button>
         </div>
-        <div>
-          <p>Cliccare la risposta</p>
+        <div class="Riga">
+          <button class="Risposta"></button>
+          <button class="Risposta"></button>
         </div>
-        <div>
-          <p>Cliccare la risposta</p>
-        </div>
-        <div>
-          <p>Cliccare la risposta</p>
-        </div>
-
-        <!-- 4 risposte  -->
-        <!-- 4 div contenenti una risposta, e solo una è esatta -->
-        <!-- fare in modo che una volta che il puntatore passi su una di esse, il div cambierà stile per indicare la risposta che si vuole andare a selezionare -->
-        <!-- tutto deve andare in un form -->
-      </section>
+      </div>
     </main>
     <footer>
-      <p class="question">QUESTION</p>
-      <p class="nAnswers">
-        N <span style="color: rgba(198, 41, 151, 0.958)">/ N</span>
-      </p>
-      <!-- specificare il numero delle domande, partendo da quella corrente e modificare il contatore ad ogni risposta selezionata -->
+      <h2>QUESTION 1 <span>/ 10</span></h2>
     </footer>
-    <script src="./assets/js/script2.js"></script>
+    <script src="./js/script2.js"></script>
+    >>>>>>> main
   </body>
 </html>
