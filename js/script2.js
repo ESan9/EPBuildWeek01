@@ -229,22 +229,12 @@ const updateQuestionNumberDisplay = function () {
   }
 };
 
+// REFRESH OROLOGIO allo scadere dei 60 secondi //
+
+// REFRESH OROLOGIO per ogni domanda risposta //
+
 // Refresh al caricamento della pagina //
 document.addEventListener("DOMContentLoaded", () => {
-  updateQuestionNumberDisplay();
+  writeQA(); // Mostra la prima domanda
+  startTimer(); // Inizia il timer per la prima domanda
 });
-
-//
-const timerResetAndNewQuestion = function () {
-  console.log("Timer reset, loading new question...");
-  // Per andare alla prossima domanda //
-  currentQuestion++;
-  if (currentQuestion <= totalQuestions) {
-    updateQuestionNumberDisplay();
-    // Nuova domanda //
-  } else {
-    window.location.href = "index3.html";
-  }
-};
-
-setTimeout(timerResetAndNewQuestion, 6000);
