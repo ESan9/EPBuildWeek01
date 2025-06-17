@@ -239,4 +239,4 @@ const timerResetAndNewQuestion = function () {
   }
 };
 
-setTimeout(timerResetAndNewQuestion, 6000);
+setTimeout(timerResetAndNewQuestion, 60000);
