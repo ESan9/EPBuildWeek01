@@ -4,9 +4,7 @@ body {
   background-size: 100%;
 }
 
-header,
-main,
-footer {
+header {
   margin-left: 10%;
 }
 
@@ -15,5 +13,136 @@ footer {
 header #logo-epicode {
   width: 12%;
   margin-top: 3em;
-  margin-bottom: 5em;
+  margin-bottom: 6em;
+  display: inline-block;
+}
+
+header .timerNumber {
+  color: white;
+  display: inline-block;
+  font-size: 3em;
+  margin-left: 20em;
+  margin-bottom: 1em;
+  font-family: "Outfit", sans-serif;
+}
+
+.timer {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin-left: 53em;
+  margin-top: 3em;
+}
+svg {
+  transform: rotate(-90deg);
+  filter: drop-shadow(1px 1px 10px rgba(7, 37, 37, 0.693));
+}
+circle {
+  fill: none;
+  stroke-width: 10;
+}
+.bg {
+  stroke: #ddd;
+}
+.progress {
+  stroke: #41befd;
+  stroke-dasharray: 282.6; /* 2πr, approx. for r = 45 */
+  stroke-dashoffset: 282.6;
+  transition: stroke-dashoffset 1s linear;
+}
+.time-text {
+  font-family: "Outfit", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 1px;
+  text-align: center;
+}
+
+.spanSeconds {
+  font-size: 0.5em;
+}
+
+.spanNumber {
+  font-size: 6em;
+  text-shadow: 0px 1px 10px black;
+}
+
+.spanTimeRemaining {
+  font-size: 0.5em;
+}
+
+/* Lavoro sul main */
+
+main #domande {
+  text-align: center;
+  margin-right: 8em;
+  margin-top: 4em;
+}
+
+main #domande h1 {
+  font-size: 3em;
+  color: white;
+  font-family: "Outfit", sans-serif;
+}
+
+main #risposte {
+  text-align: center;
+  margin-top: 2em;
+  margin-right: 8em;
+}
+
+main #risposte div {
+  display: inline-block;
+  width: 35%;
+  height: 5em;
+  margin: 1em;
+  /* border-bottom: 4px solid rgba(255, 255, 255, 0.041); */
+  background-color: rgba(240, 248, 255, 0.077);
+  border-radius: 50px;
+  box-shadow: 0px -2px 1px 1px rgba(255, 255, 255, 0.781);
+}
+
+main #risposte div:hover {
+  /* box-shadow: 1px 1px 1px 1px rgb(209, 103, 147); */
+  background-image: linear-gradient(359deg, rgb(88 34 76), #e044afeb);
+  box-shadow: 0px -3px 2px 1px rgba(230, 199, 204, 0.971),
+    0px 0px 1px 1px rgb(144, 63, 97);
+}
+
+main #risposte div p {
+  margin-top: 1.5em;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Lavoro sul footer */
+
+footer {
+  text-align: center;
+  margin-top: 4em;
+}
+
+footer .question {
+  display: inline;
+  margin-right: 1em;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+/* il contatore delle risposte bisognerà poi crearlo in JS attraverso il DOM */
+footer .nAnswers {
+  display: inline;
+  margin-right: 7em;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 1.2em;
+  margin-bottom: 1em;
 }

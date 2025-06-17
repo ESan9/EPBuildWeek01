@@ -15,16 +15,53 @@
         id="logo-epicode"
       />
       <!-- Verrà posizionato il timer di ogni domanda -->
-      <!-- titolo della domanda che cambierà ad ogni risposta selezionata -->
+
+      <div class="timer">
+        <svg viewBox="0 0 100 100">
+          <circle class="bg" cx="50" cy="50" r="45" />
+          <circle class="progress" cx="50" cy="50" r="45" />
+        </svg>
+        <div class="time-text" id="timeDisplay">
+          <!-- <span class="spanSeconds">SECONDS</span><br />
+          <span class="spanNumber">60</span><br />
+          <span class="spanTimeRemaining">REMAINING</span> -->
+        </div>
+      </div>
+
+      <!-- <div id="countdown" class="timerNumber" class="timerCircle">10</div> -->
     </header>
     <main>
-      <!-- 4 risposte  -->
-      <!-- 4 div contenenti una risposta, e solo una è esatta -->
-      <!-- fare in modo che una volta che il puntatore passi su una di esse, il div cambierà stile per indicare la risposta che si vuole andare a selezionare -->
-      <!-- tutto deve andare in un form -->
+      <section id="domande">
+        <h1>Qui è presente la domanda</h1>
+      </section>
+      <!-- titolo della domanda che cambierà ad ogni risposta selezionata -->
+      <section id="risposte">
+        <div>
+          <p>Cliccare la risposta</p>
+        </div>
+        <div>
+          <p>Cliccare la risposta</p>
+        </div>
+        <div>
+          <p>Cliccare la risposta</p>
+        </div>
+        <div>
+          <p>Cliccare la risposta</p>
+        </div>
+
+        <!-- 4 risposte  -->
+        <!-- 4 div contenenti una risposta, e solo una è esatta -->
+        <!-- fare in modo che una volta che il puntatore passi su una di esse, il div cambierà stile per indicare la risposta che si vuole andare a selezionare -->
+        <!-- tutto deve andare in un form -->
+      </section>
     </main>
     <footer>
+      <p class="question">QUESTION</p>
+      <p class="nAnswers">
+        N <span style="color: rgba(198, 41, 151, 0.958)">/ N</span>
+      </p>
       <!-- specificare il numero delle domande, partendo da quella corrente e modificare il contatore ad ogni risposta selezionata -->
     </footer>
+    <script src="./assets/js/script2.js"></script>
   </body>
 </html>
