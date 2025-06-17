@@ -1,31 +1,26 @@
-let currentQuestion = 1;
-const totalQuestions = 10;
+const agreementTerms = document.getElementById("promiseT");
+const proceedBttn = document.getElementById("proceedBttn");
 
-const getQuestionNumberPlace = document.getElementBytag("h2");
+// STATO PULSANTE //
 
-// VEDIAMO come refreshare il display //
-const updateQuestionNumberDisplay = function () {
-  if (getQuestionNumberPlace) {
-    getQuestionNumberPlace.textContent = `QUESTION ${currentQuestion}/${totalQuestions}`; //
-  }
+const updateButtonState = function () {
+  // Il pulsante è disabilitato se il checkbox non è selezionato //
+  proceedBttn.disabled = !agreementTerms.checked;
 };
 
-// Refresh al caricamento della pagina //
-document.addEventListener("DOMContentLoaded", () => {
-  updateQuestionNumberDisplay();
+// Listener al checkbox per reagire ai cambiamenti E aggiornare lo stile //
+agreementTerms.addEventListener("change", function () {
+  // Aggiorna lo stato del pulsante (abilitato/disabilitato)
+  updateButtonState();
 });
 
-//
-const timerResetAndNewQuestion = function () {
-  console.log("Timer reset, loading new question...");
-  // Per andare alla prossima domanda //
-  currentQuestion++;
-  if (currentQuestion <= totalQuestions) {
-    updateQuestionNumberDisplay();
-    // Nuova domanda //
-  } else {
-    window.location.href = "index3.html";
+// Listener per il pulsante //
+proceedBttn.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (agreementTerms.checked) {
+    window.location.href = "index2.html";
   }
-};
+});
 
-setTimeout(timerResetAndNewQuestion, 6000);
+// Chiamata iniziale per impostare lo stato e lo stile del pulsante e del checkbox al caricamento della pagina //
+updateButtonState();
