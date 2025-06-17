@@ -1,8 +1,8 @@
-const totalTime = 30;
+const totalTime = 60;
 let timeLeft = totalTime;
 
 const circle = document.querySelector(".progress");
-const text = document.getElementById("time-text");
+const text = document.getElementById("timeDisplay");
 
 const radius = 45;
 const circumference = 2 * Math.PI * radius;
@@ -16,16 +16,16 @@ function setProgress(time) {
 
 function updateTimer() {
   if (timeLeft <= 0) {
-    /* text.textContent = "0"; */
+    // text.textContent = "0";
     text.innerHTML = `<p>SECONDS</br><span>0</span></br>REMANING</p>`;
     return;
   }
 
   setProgress(timeLeft);
-  /*text.textContent = timeLeft; */
-  text.innerHTML = `<p>SECONDS</br><span>${timeLeft}</span></br>REMANING</p>`;
+  // text.textContent = timeLeft;
+  text.innerHTML = `<p class="spanSeconds">SECONDS</br><span class="spanNumber">${timeLeft}</span></br>REMANING</p>`;
   timeLeft--;
-
+  console.log(timeLeft);
   setTimeout(updateTimer, 1000);
 }
 
