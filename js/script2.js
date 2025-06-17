@@ -133,28 +133,28 @@ let index = 0;
 let numberCorrectAnswers = 0;
 
 const changeQuestion = (e) => {
-  console.log("e.target", e.target);
   if (e.target.innerText === `${questions[index - 1].correct_answer}`) {
     numberCorrectAnswers++;
   }
-  console.log("number correct answers: " + numberCorrectAnswers);
+
   if (index < questions.length) {
     writeQA(e);
   } else {
     window.location.href = "index3.html";
   }
+
+  const h2 = document.querySelector("footer h2");
+  h2.innerText = `QUESTION ${index} `;
+  h2.innerHTML += `<span>/ ${questions.length}</span>`;
 };
 
 const writeQA = () => {
   const h1 = document.getElementsByTagName("h1")[0];
-  const answers = document.getElementsByClassName("answers");
+  const answers = document.getElementsByClassName("Risposta");
 
   let allTheAnswers = [];
   allTheAnswers.push(questions[index].correct_answer);
-  console.log(
-    "questions[index].incorrect_answers.length",
-    questions[index].incorrect_answers
-  );
+
   for (let k = 0; k < questions[index].incorrect_answers.length; k++) {
     allTheAnswers.push(questions[index].incorrect_answers[k]);
   }
