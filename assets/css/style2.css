@@ -8,6 +8,18 @@ header {
   margin-left: 10%;
 }
 
+h2 {
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.6em;
+  color: white;
+  padding-bottom: 50px;
+}
+
+h2 > span {
+  color: #d20094;
+}
+
 /* Lavoro sul Header */
 
 header #logo-epicode {
