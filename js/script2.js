@@ -58,7 +58,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -201,25 +201,3 @@ const writeQA = () => {
 };
 
 writeQA();
-
-let currentQuestion = 1;
-const totalQuestions = 10;
-
-const getQuestionNumberPlace = document.getElementsByTagName("h2");
-
-// VEDIAMO come refreshare il display //
-// const updateQuestionNumberDisplay = function () {
-//   if (getQuestionNumberPlace) {
-//     getQuestionNumberPlace.textContent = `QUESTION ${currentQuestion}/${totalQuestions}`; //
-//   }
-// };
-
-// REFRESH OROLOGIO allo scadere dei 60 secondi //
-
-// REFRESH OROLOGIO per ogni domanda risposta //
-
-// Refresh al caricamento della pagina //
-// document.addEventListener("DOMContentLoaded", () => {
-//   writeQA(); // Mostra la prima domanda
-//   startTimer(); // Inizia il timer per la prima domanda
-// });
