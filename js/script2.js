@@ -133,28 +133,28 @@ let index = 0;
 let numberCorrectAnswers = 0;
 
 const changeQuestion = (e) => {
-  console.log("e.target", e.target);
   if (e.target.innerText === `${questions[index - 1].correct_answer}`) {
     numberCorrectAnswers++;
   }
-  console.log("number correct answers: " + numberCorrectAnswers);
+
   if (index < questions.length) {
     writeQA(e);
   } else {
     window.location.href = "index3.html";
   }
+
+  const h2 = document.querySelector("footer h2");
+  h2.innerText = `QUESTION ${index} `;
+  h2.innerHTML += `<span>/ ${questions.length}</span>`;
 };
 
 const writeQA = () => {
   const h1 = document.getElementsByTagName("h1")[0];
-  const answers = document.getElementsByClassName("answers");
+  const answers = document.getElementsByClassName("Risposta");
 
   let allTheAnswers = [];
   allTheAnswers.push(questions[index].correct_answer);
-  console.log(
-    "questions[index].incorrect_answers.length",
-    questions[index].incorrect_answers
-  );
+
   for (let k = 0; k < questions[index].incorrect_answers.length; k++) {
     allTheAnswers.push(questions[index].incorrect_answers[k]);
   }
@@ -166,10 +166,24 @@ const writeQA = () => {
     // answers[i].addEventListener("click", changeQuestion());
   }
 
+  console.log(
+    "allTheAnswers.length < answers.length",
+    allTheAnswers.length < answers.length
+  );
+  console.log("difference", answers.length - allTheAnswers.length);
   if (allTheAnswers.length < answers.length) {
-    for (let i = 2; i < answers.length; i++) {
+    for (
+      let i = answers.length - allTheAnswers.length;
+      i < answers.length;
+      i++
+    ) {
       answers[i].innerText = "";
       answers[i].classList.add("hide");
+      // Creare classe hide
+    }
+  } else {
+    for (let i = 2; i < answers.length; i++) {
+      answers[i].classList.remove("hide");
       // Creare classe hide
     }
   }
@@ -180,6 +194,20 @@ const writeQA = () => {
 };
 
 writeQA();
+
+const timerResetWithNewQuestionModified = function () {
+  console.log("Timer reset, loading new question...");
+
+  // Per andare alla prossima domanda //
+  index++;
+  if (index < questions.length) {
+    writeQA();
+  } else {
+    window.location.href = "index3.html";
+  }
+};
+
+setTimeout(timerResetWithNewQuestionModified, 60000);
 
 let currentQuestion = 1;
 const totalQuestions = 10;
