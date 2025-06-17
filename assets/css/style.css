@@ -1,0 +1,121 @@
+/* IMPOSTAZIONI GENERALI */
+
+body {
+  background-image: url(/assets/img/bg.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+header img {
+  width: 150px;
+  padding-left: 70px;
+  padding-top: 35px;
+}
+
+h1 {
+  font-size: 60px;
+  font-family: "Outfit", sans-serif;
+  color: white;
+  padding-left: 70px;
+  padding-top: 70px;
+}
+
+strong {
+  display: block;
+  font-weight: bold;
+}
+
+h2 {
+  padding-left: 70px;
+  padding-top: 35px;
+  font-size: 20px;
+  font-family: "Outfit", sans-serif;
+  color: #d20094;
+}
+
+p {
+  padding-left: 70px;
+  padding-top: 10px;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+ul {
+  padding-left: 90px;
+  padding-top: 35px;
+}
+
+li {
+  text-decoration: dotted;
+  padding-top: 10px;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+li > strong {
+  display: inline-block;
+  font-weight: bold;
+}
+
+#checkboxCont {
+  padding-left: 70px;
+  padding-top: 70px;
+  display: inline-block;
+}
+
+#promiseT {
+  margin: 0;
+  vertical-align: middle;
+  appearance: none;
+  background-color: transparent;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+label {
+  display: inline-block;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  padding-left: 5px;
+}
+
+#proceedBttn {
+  display: inline-block;
+  margin-left: 250px;
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 17px;
+  padding-top: 17px;
+  box-shadow: 0px 0px 20px #00ffff;
+  background-color: #00ffff;
+  border: 0;
+}
+
+#promiseT::after {
+  content: ""; /* Contenuto vuoto per creare la spunta */
+  display: inline-block;
+  width: 5px; /* Larghezza della spunta */
+  height: 10px; /* Altezza della spunta */
+  border: solid white;
+  border-width: 0 3px 3px 0; /* Solo bordi inferiore e destro */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%) rotate(45deg); /* Trasla e ruota per la forma a spunta */
+  opacity: 0; /* Inizialmente invisibile */
+}
+
+/* Rendi la SPUNTA visibile quando il checkbox #promiseT è EFFETTIVAMENTE spuntato */
+#promiseT:checked::after {
+  opacity: 1; /* Rendi visibile la spunta */
+}
