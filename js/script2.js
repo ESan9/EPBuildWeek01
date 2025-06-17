@@ -1,4 +1,4 @@
-const totalTime = 5;
+const totalTime = 60;
 let timeLeft = totalTime;
 let isTimerAlreadyOn = false;
 let hasRestarted = false;
@@ -9,7 +9,7 @@ const text = document.getElementById("timeDisplay");
 const radius = 45;
 const circumference = 2 * Math.PI * radius;
 
-circle.style.strokeDasharray = circumference;
+// circle.style.strokeDasharray = circumference;
 
 function setProgress(time) {
   const offset = circumference * (1 - time / totalTime);
@@ -203,38 +203,25 @@ const writeQA = () => {
 
 writeQA();
 
-// const timerResetWithNewQuestionModified = function () {
-//   console.log("Timer reset, loading new question...");
-
-//   // Per andare alla prossima domanda //
-//   index++;
-//   if (index < questions.length) {
-//     writeQA();
-//   } else {
-//     window.location.href = "index3.html";
-//   }
-// };
-
-// setTimeout(timerResetWithNewQuestionModified, 60000);
-
 let currentQuestion = 1;
 const totalQuestions = 10;
 
 const getQuestionNumberPlace = document.getElementsByTagName("h2");
 
 // VEDIAMO come refreshare il display //
-const updateQuestionNumberDisplay = function () {
-  if (getQuestionNumberPlace) {
-    getQuestionNumberPlace.textContent = `QUESTION ${currentQuestion}/${totalQuestions}`; //
-  }
-};
+// const updateQuestionNumberDisplay = function () {
+//   if (getQuestionNumberPlace) {
+//     getQuestionNumberPlace.textContent = `QUESTION ${currentQuestion}/${totalQuestions}`; //
+//   }
+// };
 
 // REFRESH OROLOGIO allo scadere dei 60 secondi //
 
 // REFRESH OROLOGIO per ogni domanda risposta //
 
 // Refresh al caricamento della pagina //
-document.addEventListener("DOMContentLoaded", () => {
-  writeQA(); // Mostra la prima domanda
-  startTimer(); // Inizia il timer per la prima domanda
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   writeQA(); // Mostra la prima domanda
+//   startTimer(); // Inizia il timer per la prima domanda
+// });
+console.log("numberCorrectAnswers", numberCorrectAnswers);
