@@ -124,12 +124,12 @@ const changeQuestion = (e) => {
     numberCorrectAnswers++;
   }
   console.log("number correct answers: " + numberCorrectAnswers);
-  writeQA(e);
+  if (index < questions.length) {
+    writeQA(e);
+  } else {
+    window.location.href = "index3.html";
+  }
 };
-
-/*
-Cazz, mi sono dimenticata 
-*/
 
 const writeQA = () => {
   const h1 = document.getElementsByTagName("h1")[0];
