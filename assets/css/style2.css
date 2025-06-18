@@ -178,3 +178,15 @@ footer .nAnswers {
   font-size: 1.2em;
   margin-bottom: 1em;
 }
+
+.Risposta.correct {
+  background-color: #4caf50 !important; /* Verde */
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.Risposta.incorrect {
+  background-color: #f44336 !important; /* Rosso */
+  color: white;
+  transition: background-color 0.3s ease;
+}

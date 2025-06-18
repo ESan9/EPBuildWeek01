@@ -142,64 +142,91 @@ console.log("difficulty", difficulty);
 const questions = questionsTotal.filter((q) => q.difficulty === difficulty);
 console.log(questions);
 
+if (!questions.length) {
+  alert("Nessuna domanda trovata per la difficoltà selezionata.");
+  window.location.href = "index.html";
+}
+
 let index = 0;
 let numberCorrectAnswers = 0;
 
 const changeQuestion = (e) => {
-  if (e !== 0) {
-    if (e.target.innerText === `${questions[index - 1].correct_answer}`) {
-      numberCorrectAnswers++;
-    }
+  // Se non c'è evento o target (es. timeout automatico)
+  if (!e || !e.target) return;
+
+  const selectedAnswer = e.target;
+  const currentIndex = index - 1; // domanda appena mostrata
+  const correctAnswer = questions[currentIndex].correct_answer;
+
+  const answers = document.getElementsByClassName("Risposta");
+
+  // Blocca il click su tutti i bottoni
+  for (let i = 0; i < answers.length; i++) {
+    answers[i].style.pointerEvents = "none";
   }
 
-  if (index < questions.length) {
-    timeLeft = totalTime;
-    if (e !== 0) {
-      isTimerAlreadyOn = true;
-    }
-    updateTimer();
-    writeQA();
+  if (selectedAnswer.innerText === correctAnswer) {
+    numberCorrectAnswers++;
+    selectedAnswer.classList.add("correct");
   } else {
-    window.localStorage.setItem("numberCorrectAnswers", numberCorrectAnswers);
-    window.location.href = "index3.html";
+    selectedAnswer.classList.add("incorrect");
+
+    // Evidenzia anche la risposta corretta
+    for (let i = 0; i < answers.length; i++) {
+      if (answers[i].innerText === correctAnswer) {
+        answers[i].classList.add("correct");
+        break;
+      }
+    }
   }
 
-  const h2 = document.querySelector("footer h2");
-  h2.innerText = `QUESTION ${index} `;
-  h2.innerHTML += `<span>/ ${questions.length}</span>`;
+  setTimeout(() => {
+    // Ripristina stile dei bottoni
+    for (let i = 0; i < answers.length; i++) {
+      answers[i].classList.remove("correct", "incorrect");
+      answers[i].style.pointerEvents = "auto";
+    }
+
+    if (index < questions.length) {
+      timeLeft = totalTime;
+      isTimerAlreadyOn = true;
+      updateTimer();
+
+      writeQA();
+    } else {
+      window.localStorage.setItem("numberCorrectAnswers", numberCorrectAnswers);
+      window.location.href = "index3.html";
+    }
+
+    const h2 = document.querySelector("footer h2");
+    h2.innerText = `QUESTION ${index} `;
+    h2.innerHTML += `<span>/ ${questions.length}</span>`;
+  }, 2000);
 };
 
 const writeQA = () => {
   const h1 = document.getElementsByTagName("h1")[0];
   const answers = document.getElementsByClassName("Risposta");
 
-  if (index === 0) {
-    const h2 = document.querySelector("footer h2");
-    h2.innerText = `QUESTION ${index + 1} `;
-    h2.innerHTML += `<span>/ ${questions.length}</span>`;
-  }
+  const h2 = document.querySelector("footer h2");
+  h2.innerText = `QUESTION ${index + 1} `;
+  h2.innerHTML += `<span>/ ${questions.length}</span>`;
 
   let allTheAnswers = [];
   allTheAnswers.push(questions[index].correct_answer);
-
   for (let k = 0; k < questions[index].incorrect_answers.length; k++) {
     allTheAnswers.push(questions[index].incorrect_answers[k]);
   }
   allTheAnswers.sort();
 
-  for (let i = 0; i < allTheAnswers.length; i++) {
-    answers[i].innerText = allTheAnswers[i];
+  for (let i = 0; i < answers.length; i++) {
+    answers[i].style.visibility = "visible";
+    answers[i].innerText = allTheAnswers[i] || "";
+    answers[i].style.pointerEvents = "auto";
   }
 
-  console.log("answers", answers);
-
   if (allTheAnswers.length < answers.length) {
-    for (
-      let i = answers.length - allTheAnswers.length;
-      i < answers.length;
-      i++
-    ) {
-      console.log(`answers[${i}].parentElement`, answers[i].parentElement);
+    for (let i = allTheAnswers.length; i < answers.length; i++) {
       answers[i].parentElement.style.visibility = "hidden";
     }
   } else {
@@ -210,7 +237,7 @@ const writeQA = () => {
 
   h1.innerText = questions[index].question;
 
-  index++;
+  index++; // Viene incrementato solo qui
 };
 
 writeQA();
