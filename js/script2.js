@@ -160,6 +160,7 @@ const changeQuestion = (e) => {
     updateTimer();
     writeQA();
   } else {
+    window.localStorage.setItem("totalNumberQuestions", questions.length);
     window.localStorage.setItem("numberCorrectAnswers", numberCorrectAnswers);
     window.location.href = "index3.html";
   }
