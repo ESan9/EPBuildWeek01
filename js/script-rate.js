@@ -71,6 +71,10 @@ for (let i = 0; i < colorStar.length; i++) {
 
 const infoButton = document.getElementById("info");
 
+infoButton.addEventListener("mouseover", () => {
+  infoButton.style.cursor = "pointer";
+});
+
 infoButton.addEventListener("click", function () {
   window.location.href = "https://www.epicode.com";
   const text = document.getElementById("text");
