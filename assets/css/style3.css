@@ -175,8 +175,8 @@ main #results #wrong p {
 
 main #nextPage {
   position: relative;
-  left: 60em;
-  bottom: 9.5em;
+  left: 51em;
+  bottom: 26em;
   background-color: rgba(240, 248, 255, 0.077);
   border-radius: 50px;
   box-shadow: 0px -2px 4px 1px rgba(255, 255, 255, 0.781);
@@ -189,4 +189,12 @@ main #nextPage {
 
 main #nextPage:hover {
   cursor: pointer;
+}
+
+#mascotte {
+  position: relative;
+  bottom: 478px;
+  right: -1055px;
+  width: 240px;
+  max-width: 240px;
 }
