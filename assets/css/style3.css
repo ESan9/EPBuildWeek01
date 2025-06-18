@@ -186,10 +186,3 @@ main #nextPage {
   color: white;
   font-family: "Inter", sans-serif;
 }
-
-main #mascotte {
-  width: 30em;
-  position: absolute;
-  left: 61em;
-  bottom: 15em;
-}
