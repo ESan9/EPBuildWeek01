@@ -1,0 +1,195 @@
+body {
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+header,
+main,
+footer {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* Lavoro sul header */
+
+header #logo-epicode {
+  width: 14%;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  display: inline-block;
+}
+
+/* Lavoro sul main */
+
+main #section-main {
+  text-align: center;
+  color: white;
+}
+
+main #section-main h1 {
+  font-size: 60px;
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+}
+
+main #section-main h3 {
+  font-size: 1.7em;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 2px;
+}
+
+main #results {
+  text-align: center;
+  margin-top: 8em;
+  color: white;
+}
+
+main #results div {
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+main #results #correct {
+  border-right: 2px solid #41befd;
+  position: relative;
+  right: 6em;
+  bottom: 20em;
+}
+
+main #results #correct h2 {
+  font-size: 60px;
+  font-family: "Outfit", sans-serif;
+  margin-right: 12px;
+  /* position: absolute;
+  bottom: 5.1em;
+  left: 3em; */
+}
+
+main #results #correct h3 {
+  /* position: relative;
+  right: 3.5em;
+  bottom: 3.5em; */
+  font-size: 3em;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  margin: 5px;
+}
+
+main #results #correct p {
+  /* position: relative;
+  right: 7em;
+  bottom: 6em; */
+  font-size: 1.5em;
+  margin-right: 2px;
+  font-family: "Inter", sans-serif;
+}
+
+main #results #resultCircle {
+  position: relative;
+  display: inline-block;
+  width: 20em;
+  height: 20em;
+  margin-left: 4em;
+  margin-right: 4em;
+  bottom: 4em;
+  right: 1em;
+}
+
+circle {
+  fill: none;
+  stroke-width: 10;
+}
+.bg {
+  stroke: #ddd;
+}
+.progress {
+  stroke: #41befd;
+  stroke-dasharray: 282.6; /* 2πr, approx. for r = 45 */
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+
+main #results #resultCircle svg {
+  transform: rotate(-90deg);
+  filter: drop-shadow(1px 1px 10px rgba(7, 37, 37, 0.693));
+}
+
+main #results #resultCircle #textResult {
+  position: relative;
+  bottom: 14em;
+  font-family: "Inter", sans-serif;
+}
+
+.textResultFailed {
+  position: relative;
+  bottom: 11em;
+  font-family: "Inter", sans-serif;
+}
+
+main #results #resultCircle h3 {
+  font-size: 22px;
+  font-weight: bold;
+  position: relative;
+  bottom: 15px;
+}
+
+main #results #resultCircle .promoted {
+  position: relative;
+  bottom: 20px;
+  color: #41befd;
+}
+
+main #results #resultCircle .failed {
+  position: relative;
+  bottom: 20px;
+  color: rgba(209, 42, 159, 0.958);
+}
+
+main #results #wrong {
+  position: relative;
+  right: 48.6em;
+  bottom: 7em;
+  border-right: 2px solid rgba(209, 42, 159, 0.958);
+}
+
+main #results #wrong h2 {
+  font-size: 60px;
+  font-family: "Outfit", sans-serif;
+  margin-right: 12px;
+}
+
+main #results #wrong h3 {
+  font-size: 3em;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  margin: 5px;
+}
+
+main #results #wrong p {
+  font-size: 1.5em;
+  margin-right: 2px;
+  font-family: "Inter", sans-serif;
+}
+
+main #nextPage {
+  position: relative;
+  left: 60em;
+  bottom: 9.5em;
+  background-color: rgba(240, 248, 255, 0.077);
+  border-radius: 50px;
+  box-shadow: 0px -2px 4px 1px rgba(255, 255, 255, 0.781);
+  width: 15em;
+  height: 3em;
+  font-size: 1em;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+main #mascotte {
+  width: 30em;
+  position: absolute;
+  left: 61em;
+  bottom: 15em;
+}
