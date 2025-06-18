@@ -186,3 +186,7 @@ main #nextPage {
   color: white;
   font-family: "Inter", sans-serif;
 }
+
+main #nextPage:hover {
+  cursor: pointer;
+}
