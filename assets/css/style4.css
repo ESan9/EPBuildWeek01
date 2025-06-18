@@ -1,6 +1,6 @@
 body {
   background-image: url("../img/bg.jpg");
-  background-repeat: round;
+  background-repeat: cover;
   background-size: 100%;
 }
 

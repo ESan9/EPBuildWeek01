@@ -73,4 +73,6 @@ const infoButton = document.getElementById("info");
 
 infoButton.addEventListener("click", function () {
   window.location.href = "https://www.epicode.com";
+  const text = document.getElementById("text");
+  text.value = "";
 });
