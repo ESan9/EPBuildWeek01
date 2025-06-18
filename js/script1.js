@@ -17,7 +17,35 @@ agreementTerms.addEventListener("change", function () {
 // Listener per il pulsante //
 proceedBttn.addEventListener("click", function (e) {
   e.preventDefault();
-  if (agreementTerms.checked) {
+
+  const difficultyChoices = document.querySelectorAll("#difficulty input");
+  let difficulty;
+
+  const numberQuestions = document.getElementById("numberQuestions").value;
+  window.localStorage.setItem("numberQuestions", numberQuestions);
+
+  for (let i = 0; i < difficultyChoices.length; i++) {
+    if (difficultyChoices[i].checked) {
+      difficulty = difficultyChoices[i].value;
+    }
+  }
+
+  window.localStorage.setItem("difficulty", difficulty);
+
+  if (!difficulty) {
+    alert("Select the level of difficulty");
+  }
+
+  if (!(numberQuestions > 0 && numberQuestions < 21)) {
+    alert("Choose the number of questions you would like to answer");
+  }
+
+  if (
+    agreementTerms.checked &&
+    difficulty &&
+    numberQuestions > 0 &&
+    numberQuestions < 21
+  ) {
     window.location.href = "index2.html";
   }
 });
