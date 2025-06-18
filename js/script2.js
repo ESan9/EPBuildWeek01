@@ -19,8 +19,19 @@ function setProgress(time) {
 function updateTimer() {
   if (timeLeft <= 0) {
     // text.textContent = "0";
-    text.innerHTML = `<p>SECONDS</br><span>0</span></br>REMANING</p>`;
-    changeQuestion(0);
+    text.innerHTML = `<p class="spanSeconds">SECONDS</br><span class="spanNumber">0</span></br>REMANING</p>`;
+
+    const answers = document.getElementsByClassName("Risposta");
+
+    for (let i = 0; i < answers.length; i++) {
+      if (answers[i].innerText === questions[index - 1].correct_answer) {
+        answers[i].classList.add("correct");
+      } else {
+        answers[i].classList.add("incorrect");
+      }
+    }
+
+    setTimeout(changeQuestion(0), 3000);
     return;
   }
 
@@ -145,24 +156,44 @@ let index = 0;
 let numberCorrectAnswers = 0;
 
 const changeQuestion = (e) => {
+  const answers = document.getElementsByClassName("Risposta");
+
   if (e !== 0) {
     if (e.target.innerText === `${questions[index - 1].correct_answer}`) {
       numberCorrectAnswers++;
-    }
-  }
+      e.target.classList.add("correct");
+    } else {
+      e.target.classList.add("incorrect");
 
-  if (index < questions.length) {
-    timeLeft = totalTime;
-    if (e !== 0) {
-      isTimerAlreadyOn = true;
+      // Evidenzia anche la risposta corretta
+      for (let i = 0; i < answers.length; i++) {
+        if (answers[i].innerText === questions[index - 1].correct_answer) {
+          answers[i].classList.add("correct");
+          break;
+        }
+      }
     }
-    updateTimer();
-    writeQA();
-  } else {
-    window.localStorage.setItem("totalNumberQuestions", questions.length);
-    window.localStorage.setItem("numberCorrectAnswers", numberCorrectAnswers);
-    window.location.href = "index3.html";
   }
+  setTimeout(() => {
+    // Ripristina stile dei bottoni
+    for (let i = 0; i < answers.length; i++) {
+      answers[i].classList.remove("correct", "incorrect");
+      answers[i].style.pointerEvents = "auto";
+    }
+    if (index < questions.length) {
+      timeLeft = totalTime;
+      if (e !== 0) {
+        isTimerAlreadyOn = true;
+      }
+
+      updateTimer();
+      writeQA();
+    } else {
+      window.localStorage.setItem("totalNumberQuestions", questions.length);
+      window.localStorage.setItem("numberCorrectAnswers", numberCorrectAnswers);
+      window.location.href = "index3.html";
+    }
+  }, 2000);
 
   const h2 = document.querySelector("footer h2");
   h2.innerText = `QUESTION ${index} `;
@@ -214,7 +245,7 @@ const writeQA = () => {
 
 const fetchQuestions = async function () {
   const response = await fetch(
-    `https://opentdb.com/api.php?amount=${numberQuestions}&category=18&difficulty=${difficulty}`
+    `https://opentdb.com/api.php?amount=${numberQuestions}&category=20&difficulty=${difficulty}`
   );
   const json = await response.json();
   questions = json.results;
