@@ -65,3 +65,8 @@ const correctWrong = function () {
 };
 
 correctWrong();
+
+if (answersCorrect === totalQuestions) {
+  const changeMascotte = document.getElementById("mascotte");
+  changeMascotte.src = "./assets/img/mascwin.png";
+}
