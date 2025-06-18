@@ -33,11 +33,11 @@ const correctWrong = function () {
   let answersWrong = totalQuestions - answersCorrect;
   nWrong.innerText = answersWrong;
 
-  const percentC = (answersCorrect / totalQuestions) * 100;
+  const percentC = Math.floor((answersCorrect / totalQuestions) * 100);
   console.log(`Percentuale arrotondata: ${percentC}%`);
   percentCorrect.textContent = `${percentC}%`;
 
-  const percentW = (answersWrong / totalQuestions) * 100;
+  const percentW = Math.ceil((answersWrong / totalQuestions) * 100);
   console.log(`Percentuale arrotondata: ${percentW}%`);
   percentWrong.textContent = `${percentW}%`;
 
