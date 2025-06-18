@@ -21,6 +21,9 @@ proceedBttn.addEventListener("click", function (e) {
   const difficultyChoices = document.querySelectorAll("#difficulty input");
   let difficulty;
 
+  const numberQuestions = document.getElementById("numberQuestions").value;
+  window.localStorage.setItem("numberQuestions", numberQuestions);
+
   for (let i = 0; i < difficultyChoices.length; i++) {
     if (difficultyChoices[i].checked) {
       difficulty = difficultyChoices[i].value;
@@ -33,7 +36,16 @@ proceedBttn.addEventListener("click", function (e) {
     alert("Select the level of difficulty");
   }
 
-  if (agreementTerms.checked && difficulty) {
+  if (!(numberQuestions > 0 && numberQuestions < 21)) {
+    alert("Choose the number of questions you would like to answer");
+  }
+
+  if (
+    agreementTerms.checked &&
+    difficulty &&
+    numberQuestions > 0 &&
+    numberQuestions < 21
+  ) {
     window.location.href = "index2.html";
   }
 });

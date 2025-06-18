@@ -4,6 +4,7 @@ body {
   background-image: url(/assets/img/bg.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
+  font-family: "Outfit", sans-serif;
 }
 
 header img {
@@ -61,7 +62,7 @@ li > strong {
 
 #checkboxCont {
   padding-left: 70px;
-  padding-top: 70px;
+  padding-top: 20px;
   display: inline-block;
 }
 
@@ -118,4 +119,31 @@ label {
 /* Rendi la SPUNTA visibile quando il checkbox #promiseT è EFFETTIVAMENTE spuntato */
 #promiseT:checked::after {
   opacity: 1; /* Rendi visibile la spunta */
+}
+
+#difficulty {
+  margin: 0.8em 0 0 4.5em;
+}
+
+#difficulty legend {
+  color: white; 
+  margin-bottom: 0.5em;
+}
+
+#numberQuestionsContainer {
+  margin: 1em 0 0 4.2em;
+}
+
+#test input {
+  font-size: 1em;
+}
+
+#numberQuestions {
+  width: 2em;
+}
+
+#test label {
+  margin-bottom: 0.5em;
+  margin-right: 1em;
+  font-size: 0.9em;
 }

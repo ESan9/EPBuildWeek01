@@ -43,6 +43,22 @@
       </section>
     </main>
     <footer>
+      <h2>Begin test</h2>
+      <section id="test">
+        <div id="difficulty">
+          <legend>Choose the difficulty of the test</legend>
+          <input type="radio" name="difficulty" value="easy" id="easy" />
+          <label for="easy"> Easy</label>
+          <input type="radio" name="difficulty" value="medium" id="medium" />
+          <label for="medium"> Medium</label>
+          <input type="radio" name="difficulty" value="hard" id="hard" />
+          <label for="hard"> Hard</label>
+        </div>
+        <div id="numberQuestionsContainer">
+          <label>How many questions would you like?</label>
+          <input type="number" id="numberQuestions" min="1" max="20" />
+        </div>
+      </section>
       <div id="checkboxCont">
         <input type="checkbox" id="promiseT" />
         <label for="promiseT">
@@ -50,26 +66,6 @@
           ><span class="checkboxCust"></span
         ></label>
         <button id="proceedBttn" disable>PROCEED</button>
-      </div>
-      <div id="difficulty" style="margin-left: 4em">
-        <legend style="color: white; margin-bottom: 0.5em">
-          Choose the difficulty of the test
-        </legend>
-        <input type="radio" name="difficulty" value="easy" id="easy" />
-        <label for="easy"> Easy<span class="checkboxCust"></span></label>
-        <input type="radio" name="difficulty" value="medium" id="medium" />
-        <label for="medium"> Medium<span class="checkboxCust"></span></label>
-        <input
-          type="radio"
-          name="difficulty"
-          value="difficult"
-          id="difficult"
-        />
-        <label for="difficuly">
-          Difficult<span class="checkboxCust"></span
-        ></label>
-        <input type="radio" name="difficulty" value="epic" id="epic" />
-        <label for="epic"> Epic<span class="checkboxCust"></span></label>
       </div>
     </footer>
     <script src="./js/script1.js"></script>
