@@ -40,7 +40,7 @@ updateTimer();
 
 // Bench Mark
 
-const questions = [
+const questionsTotal = [
   {
     category: "Science: Computers",
     type: "multiple",
@@ -120,7 +120,7 @@ const questions = [
   {
     category: "Science: Computers",
     type: "boolean",
-    difficulty: "easy",
+    difficulty: "medium",
     question: "Linux was first created as an alternative to Windows XP.",
     correct_answer: "False",
     incorrect_answers: ["True"],
@@ -128,13 +128,19 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "medium",
     question:
       "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
+
+const difficulty = window.localStorage.getItem("difficulty");
+console.log("difficulty", difficulty);
+
+const questions = questionsTotal.filter((q) => q.difficulty === difficulty);
+console.log(questions);
 
 let index = 0;
 let numberCorrectAnswers = 0;
@@ -154,6 +160,7 @@ const changeQuestion = (e) => {
     updateTimer();
     writeQA();
   } else {
+    window.localStorage.setItem("numberCorrectAnswers", numberCorrectAnswers);
     window.location.href = "index3.html";
   }
 
@@ -165,6 +172,12 @@ const changeQuestion = (e) => {
 const writeQA = () => {
   const h1 = document.getElementsByTagName("h1")[0];
   const answers = document.getElementsByClassName("Risposta");
+
+  if (index === 0) {
+    const h2 = document.querySelector("footer h2");
+    h2.innerText = `QUESTION ${index + 1} `;
+    h2.innerHTML += `<span>/ ${questions.length}</span>`;
+  }
 
   let allTheAnswers = [];
   allTheAnswers.push(questions[index].correct_answer);
@@ -178,20 +191,20 @@ const writeQA = () => {
     answers[i].innerText = allTheAnswers[i];
   }
 
+  console.log("answers", answers);
+
   if (allTheAnswers.length < answers.length) {
     for (
       let i = answers.length - allTheAnswers.length;
       i < answers.length;
       i++
     ) {
-      answers[i].innerText = "";
-      answers[i].classList.add("hide");
-      // Creare classe hide
+      console.log(`answers[${i}].parentElement`, answers[i].parentElement);
+      answers[i].parentElement.style.visibility = "hidden";
     }
   } else {
     for (let i = 2; i < answers.length; i++) {
-      answers[i].classList.remove("hide");
-      // Creare classe hide
+      answers[i].parentElement.style.visibility = "visible";
     }
   }
 

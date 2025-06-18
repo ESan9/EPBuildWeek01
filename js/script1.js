@@ -17,7 +17,23 @@ agreementTerms.addEventListener("change", function () {
 // Listener per il pulsante //
 proceedBttn.addEventListener("click", function (e) {
   e.preventDefault();
-  if (agreementTerms.checked) {
+
+  const difficultyChoices = document.querySelectorAll("#difficulty input");
+  let difficulty;
+
+  for (let i = 0; i < difficultyChoices.length; i++) {
+    if (difficultyChoices[i].checked) {
+      difficulty = difficultyChoices[i].value;
+    }
+  }
+
+  window.localStorage.setItem("difficulty", difficulty);
+
+  if (!difficulty) {
+    alert("Select the level of difficulty");
+  }
+
+  if (agreementTerms.checked && difficulty) {
     window.location.href = "index2.html";
   }
 });
