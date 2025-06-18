@@ -1,4 +1,4 @@
-const totalTime = 10;
+const totalTime = 60;
 let timeLeft = totalTime;
 let isTimerAlreadyOn = false;
 let hasRestarted = false;
@@ -20,8 +20,6 @@ function updateTimer() {
   if (timeLeft <= 0) {
     // text.textContent = "0";
     text.innerHTML = `<p class="spanSeconds">SECONDS</br><span class="spanNumber">0</span></br>REMANING</p>`;
-
-    // Cose in più
 
     const answers = document.getElementsByClassName("Risposta");
 
