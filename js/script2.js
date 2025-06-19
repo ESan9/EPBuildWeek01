@@ -194,14 +194,14 @@ const changeQuestion = (e) => {
       window.location.href = "index3.html";
     }
   }, 2000);
-
-  const h2 = document.querySelector("footer h2");
-  h2.innerText = `QUESTION ${index} `;
-  h2.innerHTML += `<span>/ ${questions.length}</span>`;
 };
 
 const writeQA = () => {
   console.log("questionsQA", questions);
+
+  const main = document.getElementsByTagName("main")[0];
+  main.style.display = "block";
+
   const h1 = document.getElementsByTagName("h1")[0];
   const answers = document.getElementsByClassName("Risposta");
 
@@ -239,6 +239,10 @@ const writeQA = () => {
   }
 
   h1.innerText = questions[index].question;
+
+  const h2 = document.querySelector("footer h2");
+  h2.innerText = `QUESTION ${index + 1} `;
+  h2.innerHTML += `<span>/ ${questions.length}</span>`;
 
   index++;
 };

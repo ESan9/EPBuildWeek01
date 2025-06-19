@@ -21,6 +21,10 @@ h1 {
   padding-top: 70px;
 }
 
+/* #containerTest {
+  display: none;
+} */
+
 strong {
   display: block;
   font-weight: bold;
