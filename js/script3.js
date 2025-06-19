@@ -56,11 +56,16 @@ const correctWrong = function () {
               Check your email (including<br />promotions / spam folder)
             </span>`;
   } else if (percentW >= 50) {
-    message.setAttribute("style", "bottom: 11em");
-    message.innerHTML = `<h3>I'm sorry</h3>
+    // message.setAttribute("style", "bottom: 12em");
+    message.innerHTML = `<h3>Oh no!</h3>
             <br />
-            <span class="failed">you didn't pass the exam. </span> <br />
-          `;
+            <span class="failed">You didn't pass the exam.</span> <br />
+            <span class="message">
+              Ask Stefano the beast what
+              <br />
+              you can improve and next <br />
+              time you'll surely ace <br /> the test!
+            </span>`;
   }
 };
 
