@@ -61,7 +61,7 @@ const correctWrong = function () {
             <br />
             <span class="failed">You didn't pass the exam.</span> <br />
             <span class="message">
-              Ask Stefano the beast what
+              Ask Stefano "The Beast" what
               <br />
               you can improve and next <br />
               time you'll surely ace <br /> the test!
