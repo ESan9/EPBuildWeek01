@@ -175,8 +175,8 @@ main #results #wrong p {
 
 main #nextPage {
   position: relative;
-  left: 60em;
-  bottom: 9.5em;
+  left: 51em;
+  bottom: 26em;
   background-color: rgba(240, 248, 255, 0.077);
   border-radius: 50px;
   box-shadow: 0px -2px 4px 1px rgba(255, 255, 255, 0.781);
@@ -189,4 +189,82 @@ main #nextPage {
 
 main #nextPage:hover {
   cursor: pointer;
+}
+
+@keyframes example {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#mascotte {
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  position: relative;
+  bottom: 478px;
+  right: -1055px;
+  width: 240px;
+  max-width: 240px;
+}
+
+.contenitore-felice {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background: var(--confetti-color, red);
+  opacity: 0.9;
+  animation: confetti-fall var(--fall-duration, 4s) linear infinite;
+}
+
+@keyframes pioggia-fall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.5;
+  }
+}
+.contenitore-triste {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.pioggia-piece {
+  position: sticky;
+  width: 5px;
+  height: 5px;
+  background: #56697a;
+  opacity: 0.9;
+  animation: pioggia-fall var(--fall-duration, 2s) linear infinite;
 }
