@@ -37,7 +37,9 @@ proceedBttn.addEventListener("click", function (e) {
   }
 
   if (!(numberQuestions > 0 && numberQuestions < 21)) {
-    alert("Choose the number of questions you would like to answer");
+    alert(
+      "Choose the number of questions you would like to answer. You can choose a number from 1 to 20."
+    );
   }
 
   if (
